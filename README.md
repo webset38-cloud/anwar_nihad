@@ -120,10 +120,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .gold-border-gradient {
-            border-image: linear-gradient(to bottom right, #d4af37, #f3e5ab, #aa771c) 1;
-        }
-
         /* Wax seal pulse */
         @keyframes pulse-gold {
             0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.6); }
@@ -157,14 +153,14 @@
 
     <!-- Language Switcher Bar -->
     <div class="fixed top-4 left-4 z-50 flex items-center bg-white/90 backdrop-blur-md border border-gold/40 rounded-full shadow-lg p-1">
-        <button onclick="setLanguage('en')" id="langEn" class="px-3 py-1 text-xs font-semibold rounded-full transition-all bg-gold text-white">EN</button>
+        <button onclick="setLanguage('en')" id="langEn" class="px-3 py-1 text-xs font-semibold rounded-full transition-all text-charcoal hover:text-gold">EN</button>
         <button onclick="setLanguage('fr')" id="langFr" class="px-3 py-1 text-xs font-semibold rounded-full transition-all text-charcoal hover:text-gold">FR</button>
-        <button onclick="setLanguage('ar')" id="langAr" class="px-3 py-1 text-xs font-semibold rounded-full transition-all text-charcoal hover:text-gold">العربية</button>
+        <button onclick="setLanguage('ar')" id="langAr" class="px-3 py-1 text-xs font-semibold rounded-full transition-all bg-gold text-white">العربية</button>
     </div>
 
-    <!-- Audio Element -->
+    <!-- Audio Element (Maher Zain - Baraka Allah Lakuma) -->
     <audio id="bgMusic" loop preload="auto">
-        <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-march-482.mp3" type="audio/mpeg">
+        <source src="https://cdn.jsdelivr.net/gh/ann-project/audio-repo@main/MaherZainBarakaAllah.mp3" onerror="this.src='https://assets.mixkit.co/music/preview/mixkit-wedding-march-482.mp3'" type="audio/mpeg">
     </audio>
 
     <!-- Floating Music & Audio Control Widget -->
@@ -173,7 +169,7 @@
             <div class="w-6 h-6 flex items-center justify-center text-gold group-hover:text-white">
                 <i id="musicIcon" class="fa-solid fa-music animate-spin" style="animation-duration: 3s;"></i>
             </div>
-            <span class="text-xs tracking-widest uppercase font-medium pr-1" data-i18n="musicOn">Music On</span>
+            <span id="musicText" class="text-xs tracking-widest uppercase font-medium pr-1">موسيقى الزفاف</span>
         </button>
     </div>
 
@@ -198,18 +194,18 @@
                     <div class="absolute inset-0 pointer-events-none border border-gold/20 m-2"></div>
                     
                     <div class="space-y-2 mt-2">
-                        <p class="text-xs uppercase tracking-[0.3em] text-gold-dark" data-i18n="envSubtitle">You're Cordially Invited</p>
-                        <h2 class="text-2xl sm:text-3xl font-serif text-charcoal font-medium tracking-wide">Nihad & Anwar</h2>
+                        <p class="text-xs uppercase tracking-[0.3em] text-gold-dark" data-i18n="envSubtitle">بدعوة كريمة منّا إليكم</p>
+                        <h2 class="text-2xl sm:text-3xl font-serif text-charcoal font-medium tracking-wide">نهاد & أنور</h2>
                         <div class="w-12 h-[1px] bg-gold mx-auto my-2"></div>
                         <p class="text-xs tracking-[0.2em] text-stone-500">07 • 07 • 2027</p>
                     </div>
 
                     <div class="my-auto py-4">
-                        <p class="text-xs sm:text-sm text-stone-600 italic font-serif" data-i18n="envQuote">"The beginning of our forever..."</p>
+                        <p class="text-xs sm:text-sm text-stone-600 italic font-serif" data-i18n="envQuote">"بداية أبدیتنا السعيدة..."</p>
                     </div>
 
                     <div>
-                        <span class="inline-block text-[10px] tracking-[0.25em] uppercase px-4 py-2 bg-champagne-100 text-gold-dark rounded-full" data-i18n="envVenue">Khawalo Hall • Fnideq</span>
+                        <span class="inline-block text-[10px] tracking-[0.25em] uppercase px-4 py-2 bg-champagne-100 text-gold-dark rounded-full" data-i18n="envVenue">قاعة خوالو • الفنيدق</span>
                     </div>
                 </div>
 
@@ -230,7 +226,7 @@
                         </div>
                     </div>
                     <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap bg-charcoal/90 text-gold text-[10px] tracking-[0.2em] uppercase px-3 py-1 rounded-full opacity-90 group-hover:opacity-100 transition-opacity shadow-lg" data-i18n="clickSeal">
-                        Click Seal to Open
+                        انقر على الختم للفتح
                     </div>
                 </div>
 
@@ -240,7 +236,7 @@
 
         <div class="absolute bottom-12 left-0 right-0 text-center z-40 px-4">
             <button onclick="openInvitation()" id="openBtn" class="bg-gradient-to-r from-gold via-amber-500 to-gold-dark text-white font-medium text-xs sm:text-sm tracking-[0.25em] uppercase px-8 py-4 rounded-full shadow-2xl hover:shadow-gold/50 hover:scale-105 transition-all duration-300 border border-gold-light/40">
-                <i class="fa-solid fa-envelope-open mr-2"></i> <span data-i18n="openBtnText">Open Your Invitation</span>
+                <i class="fa-solid fa-envelope-open mr-2"></i> <span data-i18n="openBtnText">افتح بطاقة الدعوة</span>
             </button>
         </div>
 
@@ -275,25 +271,25 @@
                     <div class="md:col-span-6 p-8 sm:p-12 text-center flex flex-col justify-center space-y-6">
                         
                         <div class="space-y-2">
-                            <span class="text-xs uppercase tracking-[0.35em] text-gold-dark font-medium" data-i18n="heroSubtitle">The Wedding Celebration</span>
+                            <span class="text-xs uppercase tracking-[0.35em] text-gold-dark font-medium" data-i18n="heroSubtitle">حفل الزفاف الميمون</span>
                             <h1 class="text-4xl sm:text-5xl font-serif font-normal text-charcoal tracking-wide">
-                                Nihad <span class="text-gold font-light italic">&</span> Anwar
+                                نهاد <span class="text-gold font-light italic">&</span> أنور
                             </h1>
                             <div class="w-16 h-[1px] bg-gold mx-auto my-3"></div>
                         </div>
 
                         <p class="text-stone-600 text-sm sm:text-base font-serif italic leading-relaxed px-2" data-i18n="invitationMsg">
-                            "With love and happiness, we invite you to celebrate the beginning of our forever. Your presence will make our special day even more beautiful."
+                            "بكل الحب والسعادة، نتشرف بدعوتكم لحضور حفل زفافنا ومشاركتنا بداية رحلتنا الأبدية. حضوركم يزيد يومنا جمالاً وبهجة."
                         </p>
 
                         <div class="pt-2 space-y-1">
-                            <p class="text-xs tracking-[0.25em] uppercase text-gold-dark font-semibold" data-i18n="weddingDateStr">Wednesday, July 7, 2027</p>
-                            <p class="text-xs tracking-[0.2em] text-stone-500 uppercase" data-i18n="weddingLocationStr">Khawalo Hall • Fnideq, Morocco</p>
+                            <p class="text-xs tracking-[0.25em] uppercase text-gold-dark font-semibold" data-i18n="weddingDateStr">الأربعاء، 7 يوليو 2027</p>
+                            <p class="text-xs tracking-[0.2em] text-stone-500 uppercase" data-i18n="weddingLocationStr">قاعة خوالو • الفنيدق، المغرب</p>
                         </div>
 
                         <div class="pt-4">
                             <a href="#details" class="inline-block text-xs uppercase tracking-[0.25em] text-charcoal hover:text-gold transition-colors font-medium border-b border-charcoal/30 hover:border-gold pb-1">
-                                <span data-i18n="discoverDetails">Discover Details</span> <i class="fa-solid fa-arrow-down ml-1 text-[10px]"></i>
+                                <span data-i18n="discoverDetails">اكتشف التفاصيل</span> <i class="fa-solid fa-arrow-down ml-1 text-[10px]"></i>
                             </a>
                         </div>
 
@@ -317,8 +313,8 @@
             <div class="max-w-4xl mx-auto text-center space-y-12">
                 
                 <div class="space-y-3">
-                    <span class="text-xs uppercase tracking-[0.3em] text-gold-dark font-medium" data-i18n="countdownSub">Counting Down to Forever</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif text-charcoal" data-i18n="weddingDayTitle">The Wedding Day</h2>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-dark font-medium" data-i18n="countdownSub">العد التنازلي للحظة الكبرى</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif text-charcoal" data-i18n="weddingDayTitle">يوم الزفاف</h2>
                     <div class="w-12 h-[1px] bg-gold mx-auto"></div>
                 </div>
 
@@ -327,22 +323,22 @@
                     
                     <div class="bg-white/90 backdrop-blur border border-gold/30 rounded-xl p-6 shadow-md">
                         <span id="days" class="text-3xl sm:text-4xl font-serif font-bold text-charcoal block">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-stone-500 mt-1 block" data-i18n="daysLabel">Days</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-stone-500 mt-1 block" data-i18n="daysLabel">أيام</span>
                     </div>
 
                     <div class="bg-white/90 backdrop-blur border border-gold/30 rounded-xl p-6 shadow-md">
                         <span id="hours" class="text-3xl sm:text-4xl font-serif font-bold text-charcoal block">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-stone-500 mt-1 block" data-i18n="hoursLabel">Hours</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-stone-500 mt-1 block" data-i18n="hoursLabel">ساعات</span>
                     </div>
 
                     <div class="bg-white/90 backdrop-blur border border-gold/30 rounded-xl p-6 shadow-md">
                         <span id="minutes" class="text-3xl sm:text-4xl font-serif font-bold text-charcoal block">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-stone-500 mt-1 block" data-i18n="minutesLabel">Minutes</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-stone-500 mt-1 block" data-i18n="minutesLabel">دقائق</span>
                     </div>
 
                     <div class="bg-white/90 backdrop-blur border border-gold/30 rounded-xl p-6 shadow-md">
                         <span id="seconds" class="text-3xl sm:text-4xl font-serif font-bold text-charcoal block">00</span>
-                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-stone-500 mt-1 block" data-i18n="secondsLabel">Seconds</span>
+                        <span class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-stone-500 mt-1 block" data-i18n="secondsLabel">ثوانٍ</span>
                     </div>
 
                 </div>
@@ -354,15 +350,15 @@
                     </div>
 
                     <div class="space-y-2">
-                        <h3 class="text-2xl font-serif text-charcoal" data-i18n="venueTitle">Khawalo Hall</h3>
-                        <p class="text-xs uppercase tracking-[0.25em] text-gold-dark">قاعة خوالو</p>
-                        <p class="text-stone-600 text-sm" data-i18n="venueCity">Fnideq, Morocco</p>
+                        <h3 class="text-2xl font-serif text-charcoal" data-i18n="venueTitle">قاعة خوالو</h3>
+                        <p class="text-xs uppercase tracking-[0.25em] text-gold-dark">Khawalo Hall</p>
+                        <p class="text-stone-600 text-sm" data-i18n="venueCity">الفنيدق، المغرب</p>
                     </div>
 
                     <div>
-                        <a href="https://maps.google.com/?q=Fnideq+Morocco" target="_blank" rel="noopener noreferrer" 
+                        <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJa-h83ZihDA0ROPqancTimdo" target="_blank" rel="noopener noreferrer" 
                            class="inline-flex items-center gap-2 bg-charcoal text-white hover:bg-gold transition-colors text-xs uppercase tracking-[0.2em] px-6 py-3 rounded-full shadow-md">
-                            <i class="fa-solid fa-map-location-dot"></i> <span data-i18n="viewLocation">View Location</span>
+                            <i class="fa-solid fa-map-location-dot"></i> <span data-i18n="viewLocation">عرض الموقع على الخريطة</span>
                         </a>
                     </div>
                 </div>
@@ -378,8 +374,8 @@
             <div class="max-w-6xl mx-auto space-y-12">
                 
                 <div class="text-center space-y-3">
-                    <span class="text-xs uppercase tracking-[0.3em] text-gold-dark font-medium" data-i18n="gallerySub">Moments of Love</span>
-                    <h2 class="text-3xl sm:text-4xl font-serif text-charcoal" data-i18n="galleryTitle">Our Gallery</h2>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-dark font-medium" data-i18n="gallerySub">لحظات من الحب</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif text-charcoal" data-i18n="galleryTitle">معرض الصور</h2>
                     <div class="w-12 h-[1px] bg-gold mx-auto"></div>
                 </div>
 
@@ -391,7 +387,7 @@
                              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                              onerror="this.src='https://placehold.co/600x800/e8ded4/564337?text=Moment+1'">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-xs uppercase tracking-[0.2em] font-medium" data-i18n="galleryCaption1">Forever Yours</p>
+                            <p class="text-white text-xs uppercase tracking-[0.2em] font-medium" data-i18n="galleryCaption1">معاً للأبد</p>
                         </div>
                     </div>
 
@@ -401,7 +397,7 @@
                              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                              onerror="this.src='https://placehold.co/600x800/e8ded4/564337?text=Moment+2'">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-xs uppercase tracking-[0.2em] font-medium" data-i18n="galleryCaption2">The Promise</p>
+                            <p class="text-white text-xs uppercase tracking-[0.2em] font-medium" data-i18n="galleryCaption2">الوعد</p>
                         </div>
                     </div>
 
@@ -411,7 +407,7 @@
                              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                              onerror="this.src='https://placehold.co/600x800/e8ded4/564337?text=Moment+3'">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                            <p class="text-white text-xs uppercase tracking-[0.2em] font-medium" data-i18n="galleryCaption3">Endless Joy</p>
+                            <p class="text-white text-xs uppercase tracking-[0.2em] font-medium" data-i18n="galleryCaption3">فرحة لا تنتهي</p>
                         </div>
                     </div>
 
@@ -433,25 +429,25 @@
                 </div>
 
                 <div class="space-y-4">
-                    <span class="text-xs uppercase tracking-[0.3em] text-gold-dark font-medium" data-i18n="closingSub">With Joyful Anticipation</span>
-                    <h2 class="text-3xl sm:text-5xl font-serif text-charcoal" data-i18n="closingTitle">We Can't Wait to Celebrate With You!</h2>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-dark font-medium" data-i18n="closingSub">بكل شوق واهتمام</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif text-charcoal" data-i18n="closingTitle">ننتظركم بفارغ الصبر لنحتفل معاً!</h2>
                     <div class="w-16 h-[1px] bg-gold mx-auto"></div>
                 </div>
 
                 <div class="space-y-2">
-                    <p class="text-2xl font-serif text-charcoal tracking-wide">Nihad & Anwar</p>
+                    <p class="text-2xl font-serif text-charcoal tracking-wide">نهاد & أنور</p>
                     <p class="text-xs uppercase tracking-[0.25em] text-stone-500">07 • 07 • 2027</p>
                 </div>
 
                 <div class="pt-6">
                     <button onclick="showToast(translations[currentLang].toastWish)" class="bg-gold hover:bg-gold-dark text-white text-xs uppercase tracking-[0.25em] px-8 py-4 rounded-full shadow-lg transition-all duration-300">
-                        <i class="fa-solid fa-glass-cheers mr-2"></i> <span data-i18n="sendWishes">Send Best Wishes</span>
+                        <i class="fa-solid fa-glass-cheers mr-2"></i> <span data-i18n="sendWishes">إرسال التهاني</span>
                     </button>
                 </div>
             </div>
 
             <footer class="mt-20 pt-8 border-t border-champagne-300 text-stone-500 text-xs tracking-widest uppercase" data-i18n="footerText">
-                &copy; 2027 Nihad & Anwar Wedding • Designed with Luxury
+                &copy; 2027 حفل زفاف نهاد وأنور • صُمم بفخامة
             </footer>
         </section>
 
@@ -461,42 +457,42 @@
     <!-- JavaScript Application Logic & Translations -->
     <script>
         const translations = {
-            en: {
-                envSubtitle: "You're Cordially Invited",
-                envQuote: '"The beginning of our forever..."',
-                envVenue: "Khawalo Hall • Fnideq",
-                clickSeal: "Click Seal to Open",
-                openBtnText: "Open Your Invitation",
-                heroSubtitle: "The Wedding Celebration",
-                invitationMsg: '"With love and happiness, we invite you to celebrate the beginning of our forever. Your presence will make our special day even more beautiful."',
-                weddingDateStr: "Wednesday, July 7, 2027",
-                weddingLocationStr: "Khawalo Hall • Fnideq, Morocco",
-                discoverDetails: "Discover Details",
-                countdownSub: "Counting Down to Forever",
-                weddingDayTitle: "The Wedding Day",
-                daysLabel: "Days",
-                hoursLabel: "Hours",
-                minutesLabel: "Minutes",
-                secondsLabel: "Seconds",
-                venueTitle: "Khawalo Hall",
-                venueCity: "Fnideq, Morocco",
-                viewLocation: "View Location",
-                gallerySub: "Moments of Love",
-                galleryTitle: "Our Gallery",
-                galleryCaption1: "Forever Yours",
-                galleryCaption2: "The Promise",
-                galleryCaption3: "Endless Joy",
-                closingSub: "With Joyful Anticipation",
-                closingTitle: "We Can't Wait to Celebrate With You!",
-                sendWishes: "Send Best Wishes",
-                footerText: "© 2027 Nihad & Anwar Wedding • Designed with Luxury",
-                musicOn: "Music On",
-                musicOff: "Music Off",
-                toastWelcome: "Welcome to Nihad & Anwar's Wedding Invitation!",
-                toastMusicPlay: "Background music playing.",
-                toastMusicPause: "Background music paused.",
-                toastAudioErr: "Unable to auto-play audio. Please check browser permissions.",
-                toastWish: "Thank you for confirming your excitement! We look forward to seeing you."
+            ar: {
+                envSubtitle: "بدعوة كريمة منّا إليكم",
+                envQuote: '"بداية أبدیتنا السعيدة..."',
+                envVenue: "قاعة خوالو • الفنيدق",
+                clickSeal: "انقر على الختم للفتح",
+                openBtnText: "افتح بطاقة الدعوة",
+                heroSubtitle: "حفل الزفاف الميمون",
+                invitationMsg: '"بكل الحب والسعادة، نتشرف بدعوتكم لحضور حفل زفافنا ومشاركتنا بداية رحلتنا الأبدية. حضوركم يزيد يومنا جمالاً وبهجة."',
+                weddingDateStr: "الأربعاء، 7 يوليو 2027",
+                weddingLocationStr: "قاعة خوالو • الفنيدق، المغرب",
+                discoverDetails: "اكتشف التفاصيل",
+                countdownSub: "العد التنازلي للحظة الكبرى",
+                weddingDayTitle: "يوم الزفاف",
+                daysLabel: "أيام",
+                hoursLabel: "ساعات",
+                minutesLabel: "دقائق",
+                secondsLabel: "ثوانٍ",
+                venueTitle: "قاعة خوالو",
+                venueCity: "الفنيدق، المغرب",
+                viewLocation: "عرض الموقع على الخريطة",
+                gallerySub: "لحظات من الحب",
+                galleryTitle: "معرض الصور",
+                galleryCaption1: "معاً للأبد",
+                galleryCaption2: "الوعد",
+                galleryCaption3: "فرحة لا تنتهي",
+                closingSub: "بكل شوق واهتمام",
+                closingTitle: "ننتظركم بفارغ الصبر لنحتفل معاً!",
+                sendWishes: "إرسال التهاني",
+                footerText: "© 2027 حفل زفاف نهاد وأنور • صُمم بفخامة",
+                musicOn: "موسيقى الزفاف",
+                musicOff: "إيقاف الموسيقى",
+                toastWelcome: "مرحباً بكم في حفل زفاف نهاد وأنور!",
+                toastMusicPlay: "تم تشغيل نشيد بارك الله لكما (ماهر زين).",
+                toastMusicPause: "تم إيقاف الموسيقى.",
+                toastAudioErr: "تعذر تشغيل الصوت تلقائياً. يرجى استخدام زر الموسيقى في الأسفل.",
+                toastWish: "شكراً لمشاعركم الطيبة! نتطلع لرؤيتكم قريباً."
             },
             fr: {
                 envSubtitle: "Vous êtes cordialement invités",
@@ -527,7 +523,7 @@
                 closingTitle: "Nous avons hâte de célébrer avec vous !",
                 sendWishes: "Envoyer vos voeux",
                 footerText: "© 2027 Mariage Nihad & Anwar • Conçu avec Luxe",
-                musicOn: "Musique activée",
+                musicOn: "Musique de mariage",
                 musicOff: "Musique désactivée",
                 toastWelcome: "Bienvenue à l'invitation de mariage de Nihad & Anwar !",
                 toastMusicPlay: "Musique de fond en lecture.",
@@ -535,46 +531,46 @@
                 toastAudioErr: "Impossible de lancer l'audio. Veuillez vérifier les autorisations.",
                 toastWish: "Merci pour vos vœux chaleureux ! Nous avons hâte de vous voir."
             },
-            ar: {
-                envSubtitle: "بدعوة كريمة منّا إليكم",
-                envQuote: '"بداية أبدیتنا السعيدة..."',
-                envVenue: "قاعة خوالو • الفنيدق",
-                clickSeal: "انقر على الختم للفتح",
-                openBtnText: "افتح بطاقة الدعوة",
-                heroSubtitle: "حفل الزفاف الميمون",
-                invitationMsg: '"بكل الحب والسعادة، نتشرف بدعوتكم لحضور حفل زفافنا ومشاركتنا بداية رحلتنا الأبدية. حضوركم يزيد يومنا جمالاً وبهجة."',
-                weddingDateStr: "الأربعاء، 7 يوليو 2027",
-                weddingLocationStr: "قاعة خوالو • الفنيدق، المغرب",
-                discoverDetails: "اكتشف التفاصيل",
-                countdownSub: "العد التنازلي للحظة الكبرى",
-                weddingDayTitle: "يوم الزفاف",
-                daysLabel: "أيام",
-                hoursLabel: "ساعات",
-                minutesLabel: "دقائق",
-                secondsLabel: "ثوانٍ",
-                venueTitle: "قاعة خوالو",
-                venueCity: "الفنيدق، المغرب",
-                viewLocation: "عرض الموقع على الخريطة",
-                gallerySub: "لحظات من الحب",
-                galleryTitle: "معرض الصور",
-                galleryCaption1: "معاً للأبد",
-                galleryCaption2: "الوعد",
-                galleryCaption3: "فرحة لا تنتهي",
-                closingSub: "بكل شوق واهتمام",
-                closingTitle: "ننتظركم بفارغ الصبر لنحتفل معاً!",
-                sendWishes: "إرسال التهاني",
-                footerText: "© 2027 حفل زفاف نهاد وأنور • صُمم بفخامة",
-                musicOn: "تشغيل الموسيقى",
-                musicOff: "إيقاف الموسيقى",
-                toastWelcome: "مرحباً بكم في حفل زفاف نهاد وأنور!",
-                toastMusicPlay: "تم تشغيل الموسيقى الخلفية.",
-                toastMusicPause: "تم إيقاف الموسيقى.",
-                toastAudioErr: "تعذر تشغيل الصوت تلقائياً. يرجى التحقق من إعدادات المتصفح.",
-                toastWish: "شكراً لمشاعركم الطيبة! نتطلع لرؤيتكم قريباً."
+            en: {
+                envSubtitle: "You're Cordially Invited",
+                envQuote: '"The beginning of our forever..."',
+                envVenue: "Khawalo Hall • Fnideq",
+                clickSeal: "Click Seal to Open",
+                openBtnText: "Open Your Invitation",
+                heroSubtitle: "The Wedding Celebration",
+                invitationMsg: '"With love and happiness, we invite you to celebrate the beginning of our forever. Your presence will make our special day even more beautiful."',
+                weddingDateStr: "Wednesday, July 7, 2027",
+                weddingLocationStr: "Khawalo Hall • Fnideq, Morocco",
+                discoverDetails: "Discover Details",
+                countdownSub: "Counting Down to Forever",
+                weddingDayTitle: "The Wedding Day",
+                daysLabel: "Days",
+                hoursLabel: "Hours",
+                minutesLabel: "Minutes",
+                secondsLabel: "Seconds",
+                venueTitle: "Khawalo Hall",
+                venueCity: "Fnideq, Morocco",
+                viewLocation: "View Location",
+                gallerySub: "Moments of Love",
+                galleryTitle: "Our Gallery",
+                galleryCaption1: "Forever Yours",
+                galleryCaption2: "The Promise",
+                galleryCaption3: "Endless Joy",
+                closingSub: "With Joyful Anticipation",
+                closingTitle: "We Can't Wait to Celebrate With You!",
+                sendWishes: "Send Best Wishes",
+                footerText: "© 2027 Nihad & Anwar Wedding • Designed with Luxury",
+                musicOn: "Wedding Music",
+                musicOff: "Music Off",
+                toastWelcome: "Welcome to Nihad & Anwar's Wedding Invitation!",
+                toastMusicPlay: "Background music playing.",
+                toastMusicPause: "Background music paused.",
+                toastAudioErr: "Unable to auto-play audio. Please check browser permissions.",
+                toastWish: "Thank you for confirming your excitement! We look forward to seeing you."
             }
         };
 
-        let currentLang = 'en';
+        let currentLang = 'ar'; // Default language set to Arabic
 
         function setLanguage(lang) {
             currentLang = lang;
@@ -611,6 +607,9 @@
             });
         }
 
+        // Initialize Arabic on load
+        setLanguage('ar');
+
         // Custom Toast Notification System
         function showToast(message) {
             const toast = document.getElementById('toast');
@@ -637,7 +636,7 @@
             if (isPlaying) {
                 bgMusic.pause();
                 isPlaying = false;
-                musicIcon.className = "fa-solid fa-music-slash";
+                musicIcon.className = "fa-solid fa-music";
                 musicText.textContent = translations[currentLang].musicOff;
                 showToast(translations[currentLang].toastMusicPause);
             } else {
@@ -661,7 +660,7 @@
 
             envelope.classList.add('envelope-open');
 
-            bgMusic.volume = 0.4;
+            bgMusic.volume = 0.5;
             bgMusic.play().then(() => {
                 isPlaying = true;
                 musicControl.classList.remove('hidden');
